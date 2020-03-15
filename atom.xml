@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://danielwongkkk.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-15T14:34:33.924Z</updated>
+    <updated>2020-03-15T14:38:02.020Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://danielwongkkk.github.io"/>
     <link rel="self" href="https://danielwongkkk.github.io/atom.xml"/>
@@ -223,10 +223,12 @@ a:hover {   /* :hover 是链接伪类选择器 鼠标经过 */
 </tbody>
 </table>
 <p>nth-child和nth-of-type的区别</p>
-<ul>
-<li><code>nth-child</code>  选择父元素里面的第几个子元素，<strong>不管是第几个类型</strong></li>
-<li><code>nt-of-type</code>  选择指定类型的元素</li>
-</ul>
+</li>
+<li>
+<p><code>nth-child</code>  选择父元素里面的第几个子元素，<strong>不管是第几个类型</strong></p>
+</li>
+<li>
+<p><code>nt-of-type</code>  选择指定类型的元素</p>
 </li>
 </ul>
 <h4 id="伪元素选择器">伪元素选择器</h4>
