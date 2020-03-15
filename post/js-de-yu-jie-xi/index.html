@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Gridea</title>
+<title>JS的预解析 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,15 @@
 
 
 
-    <meta name="description" content="温故而知新">
+    <meta name="description" content="js引擎运行js分为两步：预解析	代码执行
+
+预解析：js引擎会把js里面所有的var还有function提升到当前作用域的最前面
+代码执行：按照代码书写顺序从上往下执行
+
+预解析分为：变量预解析（变量提升）和 函数预解析（函数提升）
+
+变..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,12 +96,86 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">JS的预解析</h2>
+            <div class="post-date">2020-03-15</div>
             
-              <a class="tag" href="https://danielwongkkk.github.io/tag/NVlZVtABn/">Gridea</a>
+            <div class="post-content" v-pre>
+              <p>js引擎运行js分为两步：预解析	代码执行</p>
+<ol>
+<li>预解析：js引擎会把js里面所有的var还有function提升到<strong>当前</strong>作用域的最前面</li>
+<li>代码执行：按照代码书写顺序从上往下执行</li>
+</ol>
+<p>预解析分为：变量预解析（变量提升）和 函数预解析（函数提升）</p>
+<ol>
+<li>变量提升：所有的变量声明提升至当前作用域的最前面（不提升赋值语句）</li>
+<li>函数提升：所有的函数声明提升到当前作用域的最前面（不调用函数，函数表达式不提升）</li>
+</ol>
+<p><strong>一个案例</strong></p>
+<pre><code class="language-JavaScript">var num=10;
+fun();
+function fun(){
+	console.log(num);
+	var num=20;
+}
+//预解析后~
+var num;
+function fun(){
+	var num;
+    console.log(num);
+    num=20;
+} 
+num=10;
+fun();
+//结果是undefined
+</code></pre>
+<p><strong>一个笔试题</strong></p>
+<pre><code class="language-JavaScript">f1();
+console.log(c);
+console.log(b);
+console.log(a);
+function f1(){
+    var a=b=c=9;//相当于var a=9;b=9;c=9;
+    //上面的集体声明是错的，正确应该是：var a=9,b=9,c=9;
+    //上面把b,c未声明直接赋值，把b,c变成了全局变量
+    //结论：在函数作用域内 加var定义的变量是局部变量，不加var定义的就成了全局变量
+    //在ES5的'use strict'模式下，如果变量没有使用var定义，就会报错
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+//预解析后~
+function f1(){
+    var a；
+    a=9;b=9;c=9;
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+f1();
+console.log(c);
+console.log(b);
+console.log(a);
+//结果是：9 9 9 9 9 报错
+</code></pre>
+
+            </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://danielwongkkk.github.io/post/lesslessqiong-cha-li-bao-dian-greatergreater-yue-du-bi-ji/">
+                  <h3 class="post-title">
+                    《穷查理宝典》阅读笔记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
       </div>
     </div>

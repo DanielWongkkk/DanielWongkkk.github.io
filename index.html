@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://danielwongkkk.github.io/favicon.ico?v=1583134006853">
+<link rel="shortcut icon" href="https://danielwongkkk.github.io/favicon.ico?v=1584262744459">
 <link rel="stylesheet" href="https://danielwongkkk.github.io/styles/main.css">
 
 
@@ -20,6 +20,8 @@
 
     <meta name="description" content="温故而知新">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    
   </head>
   <body>
     <div id="app" class="main">
@@ -28,7 +30,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://danielwongkkk.github.io">
-        <img src="https://danielwongkkk.github.io/images/avatar.png?v=1583134006853" class="site-logo">
+        <img src="https://danielwongkkk.github.io/images/avatar.png?v=1584262744459" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -92,11 +94,26 @@
           
             <article class="post-item">
               <div class="left">
-                <a href="https://danielwongkkk.github.io/post/this-is-my-first-page/">
-                  <h2 class="post-title">this is my first page</h2>
+                <a href="https://danielwongkkk.github.io/post/js-de-yu-jie-xi/">
+                  <h2 class="post-title">JS的预解析</h2>
                 </a>
                 <div class="post-date">
-                  2020-02-13
+                  2020-03-15
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://danielwongkkk.github.io/post/lesslessqiong-cha-li-bao-dian-greatergreater-yue-du-bi-ji/">
+                  <h2 class="post-title">《穷查理宝典》阅读笔记</h2>
+                </a>
+                <div class="post-date">
+                  2020-03-12
                 </div>
                 <div class="post-abstract">
                   
@@ -151,6 +168,11 @@ var app = new Vue({
 
 </script>
 
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
 
 
 
