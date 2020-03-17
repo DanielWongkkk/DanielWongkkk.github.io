@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://danielwongkkk.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-15T14:38:02.020Z</updated>
+    <updated>2020-03-17T08:21:16.086Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://danielwongkkk.github.io"/>
     <link rel="self" href="https://danielwongkkk.github.io/atom.xml"/>
@@ -10,6 +10,98 @@
     <logo>https://danielwongkkk.github.io/images/avatar.png</logo>
     <icon>https://danielwongkkk.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[meta viewport标签详解]]></title>
+        <id>https://danielwongkkk.github.io/post/kJaKWGaXM/</id>
+        <link href="https://danielwongkkk.github.io/post/kJaKWGaXM/">
+        </link>
+        <updated>2020-03-17T08:20:15.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="为什么需要视口标签">为什么需要视口标签</h3>
+<p>控制页面在移动端不要缩小显示</p>
+<h3 id="各属性详解">各属性详解</h3>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">width</td>
+<td style="text-align:center">设置viewport的宽度</td>
+</tr>
+<tr>
+<td style="text-align:center">user-scalable</td>
+<td style="text-align:center">用户是否可以缩放，yes或no</td>
+</tr>
+<tr>
+<td style="text-align:center">initial-scale</td>
+<td style="text-align:center">初始缩放比</td>
+</tr>
+<tr>
+<td style="text-align:center">maximum-scale</td>
+<td style="text-align:center">最大缩放比</td>
+</tr>
+<tr>
+<td style="text-align:center">minimum-scale</td>
+<td style="text-align:center">最小缩放比</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[对于html语义化的理解]]></title>
+        <id>https://danielwongkkk.github.io/post/zjaNURodK/</id>
+        <link href="https://danielwongkkk.github.io/post/zjaNURodK/">
+        </link>
+        <updated>2020-03-17T08:07:52.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="什么是语义化">什么是语义化</h3>
+<p>让代码更加易懂，也便于浏览器爬虫，屏幕阅读器的一种约定</p>
+<h3 id="从没有语义化到有语义化">从没有语义化到有语义化</h3>
+<p>最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。</p>
+<p>后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。</p>
+<p>再后来，前端专业化，知道 HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签</p>
+<p>语义化的好处是易读、有利于SEO等</p>
+<h3 id="用语义化标签布局">用语义化标签布局</h3>
+<figure data-type="image" tabindex="1"><img src="https://pic1.zhimg.com/80/v2-b0b4e65944f45abea083de0e8087d69c_720w.jpg" alt="v2-b0b4e65944f45abea083de0e8087d69c_720w" loading="lazy"></figure>
+<h3 id="常见的语义化标签">常见的语义化标签</h3>
+<p><code>&lt;header&gt;</code></p>
+<ul>
+<li>定义文章的介绍信息：标题，logo，slogan；包裹目录部分，搜索框，一个nav或者任何相关的logo；</li>
+<li>一个页面中header的个数没有限制，可以为每个内容块添加一个header；</li>
+</ul>
+<p><code>&lt;nav&gt;</code></p>
+<ul>
+<li>定义文章导航栏，链接等</li>
+<li>nav一般和u、li配合做导航栏</li>
+</ul>
+<p><code>&lt;main&gt;</code></p>
+<ul>
+<li>定义文章的主要内容</li>
+<li>main标签在一份文档中是唯一的，其后代元素常常包括<code>&lt;article&gt;</code></li>
+</ul>
+<p><code>&lt;article&gt;</code></p>
+<ul>
+<li>定义文档中可以脱离其他部分，一份独立的内容，通常带有标题，当article内嵌article时，里外层的内容应该是相关的，比如一篇微博和它的评论</li>
+</ul>
+<p><code>&lt;section&gt;</code></p>
+<ul>
+<li>与article的差别在于，它是整体的一部分，或者是文章的一节，一般来说section也会带有标题；</li>
+</ul>
+<p><code>&lt;aside&gt;</code></p>
+<ul>
+<li>侧边栏（与article并列存在）或者嵌入内容（在article内），通常认为是独立拆分出来而不受整体影响的一部分，作为主要内容的附属信息，如索引，词条列表，或者页面及站点的附属信息，如广告，作者资料介绍等；</li>
+</ul>
+<p><code>&lt;footer&gt;</code></p>
+<ul>
+<li>页脚，通常包含作者、版权信息或者相关链接等；</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS常见选择器功能及其权重]]></title>
         <id>https://danielwongkkk.github.io/post/L8Reb8XWB/</id>

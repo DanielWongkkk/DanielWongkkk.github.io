@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>JS的预解析 | Gridea</title>
+<title>对于html语义化的理解 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,15 +18,12 @@
 
 
 
-    <meta name="description" content="js引擎运行js分为两步：预解析	代码执行
-
-预解析：js引擎会把js里面所有的var还有function提升到当前作用域的最前面
-代码执行：按照代码书写顺序从上往下执行
-
-预解析分为：变量预解析（变量提升）和 函数预解析（函数提升）
-
-变..." />
-    <meta name="keywords" content="JavaScript" />
+    <meta name="description" content="什么是语义化
+让代码更加易懂，也便于浏览器爬虫，屏幕阅读器的一种约定
+从没有语义化到有语义化
+最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。
+后来有..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -109,84 +106,60 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">JS的预解析</h2>
-            <div class="post-date">2020-03-15</div>
+            <h2 class="post-title">对于html语义化的理解</h2>
+            <div class="post-date">2020-03-17</div>
             
             <div class="post-content" v-pre>
-              <p>js引擎运行js分为两步：预解析	代码执行</p>
-<ol>
-<li>预解析：js引擎会把js里面所有的var还有function提升到<strong>当前</strong>作用域的最前面</li>
-<li>代码执行：按照代码书写顺序从上往下执行</li>
-</ol>
-<p>预解析分为：变量预解析（变量提升）和 函数预解析（函数提升）</p>
-<ol>
-<li>变量提升：所有的变量声明提升至当前作用域的最前面（不提升赋值语句）</li>
-<li>函数提升：所有的函数声明提升到当前作用域的最前面（不调用函数，函数表达式不提升）</li>
-</ol>
-<p><strong>一个案例</strong></p>
-<pre><code class="language-JavaScript">var num=10;
-fun();
-function fun(){
-	console.log(num);
-	var num=20;
-}
-//预解析后~
-var num;
-function fun(){
-	var num;
-    console.log(num);
-    num=20;
-} 
-num=10;
-fun();
-//结果是undefined
-</code></pre>
-<p><strong>一个笔试题</strong></p>
-<pre><code class="language-JavaScript">f1();
-console.log(c);
-console.log(b);
-console.log(a);
-function f1(){
-    var a=b=c=9;//相当于var a=9;b=9;c=9;
-    //上面的集体声明是错的，正确应该是：var a=9,b=9,c=9;
-    //上面把b,c未声明直接赋值，把b,c变成了全局变量
-    //结论：在函数作用域内 加var定义的变量是局部变量，不加var定义的就成了全局变量
-    //在ES5的'use strict'模式下，如果变量没有使用var定义，就会报错
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-//预解析后~
-function f1(){
-    var a；
-    a=9;b=9;c=9;
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-f1();
-console.log(c);
-console.log(b);
-console.log(a);
-//结果是：9 9 9 9 9 报错
-</code></pre>
+              <h3 id="什么是语义化">什么是语义化</h3>
+<p>让代码更加易懂，也便于浏览器爬虫，屏幕阅读器的一种约定</p>
+<h3 id="从没有语义化到有语义化">从没有语义化到有语义化</h3>
+<p>最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。</p>
+<p>后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。</p>
+<p>再后来，前端专业化，知道 HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签</p>
+<p>语义化的好处是易读、有利于SEO等</p>
+<h3 id="用语义化标签布局">用语义化标签布局</h3>
+<figure data-type="image" tabindex="1"><img src="https://pic1.zhimg.com/80/v2-b0b4e65944f45abea083de0e8087d69c_720w.jpg" alt="v2-b0b4e65944f45abea083de0e8087d69c_720w" loading="lazy"></figure>
+<h3 id="常见的语义化标签">常见的语义化标签</h3>
+<p><code>&lt;header&gt;</code></p>
+<ul>
+<li>定义文章的介绍信息：标题，logo，slogan；包裹目录部分，搜索框，一个nav或者任何相关的logo；</li>
+<li>一个页面中header的个数没有限制，可以为每个内容块添加一个header；</li>
+</ul>
+<p><code>&lt;nav&gt;</code></p>
+<ul>
+<li>定义文章导航栏，链接等</li>
+<li>nav一般和u、li配合做导航栏</li>
+</ul>
+<p><code>&lt;main&gt;</code></p>
+<ul>
+<li>定义文章的主要内容</li>
+<li>main标签在一份文档中是唯一的，其后代元素常常包括<code>&lt;article&gt;</code></li>
+</ul>
+<p><code>&lt;article&gt;</code></p>
+<ul>
+<li>定义文档中可以脱离其他部分，一份独立的内容，通常带有标题，当article内嵌article时，里外层的内容应该是相关的，比如一篇微博和它的评论</li>
+</ul>
+<p><code>&lt;section&gt;</code></p>
+<ul>
+<li>与article的差别在于，它是整体的一部分，或者是文章的一节，一般来说section也会带有标题；</li>
+</ul>
+<p><code>&lt;aside&gt;</code></p>
+<ul>
+<li>侧边栏（与article并列存在）或者嵌入内容（在article内），通常认为是独立拆分出来而不受整体影响的一部分，作为主要内容的附属信息，如索引，词条列表，或者页面及站点的附属信息，如广告，作者资料介绍等；</li>
+</ul>
+<p><code>&lt;footer&gt;</code></p>
+<ul>
+<li>页脚，通常包含作者、版权信息或者相关链接等；</li>
+</ul>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://danielwongkkk.github.io/tag/JavaScript/" class="tag">
-                    JavaScript
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://danielwongkkk.github.io/post/lesslessqiong-cha-li-bao-dian-greatergreater-yue-du-bi-ji/">
+                <a href="https://danielwongkkk.github.io/post/L8Reb8XWB/">
                   <h3 class="post-title">
-                    《穷查理宝典》阅读笔记
+                    CSS常见选择器功能及其权重
                   </h3>
                 </a>
               </div>
